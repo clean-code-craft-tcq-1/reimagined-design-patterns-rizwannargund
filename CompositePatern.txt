@@ -1,0 +1,35 @@
+Composite Pattern
+
+- Is a structural pattern
+- Using composite we can solve the problem where objects are of tree structures to represent part-whole hierarchies.
+	Composite let clients treat individual objects and compositions of objects same.
+	Eg. In an organization we have hierarchy structure where head would be called as compositions because it has employees as leaf.
+	Again under employees they are different types of roles divided.
+	
+	Now if we want to know to how many employees work under a manager or how many managers work under a department head to know in real world it would be easy
+	but in program world it would be problematic. Since we dont know how the hierarchy is been managed under the organization we just treat everyone as employee.
+	To overcome this issue we issue composite pattern which helps to treat compositions of employees as single employee.
+	
+Client 
+-Clients use the Component interface to interact with objects in the
+
+Component
+-is the abstraction for all components, including composite ones
+
+Leaf
+-Represents leaf objects in the composition
+-Implements all Component methods
+
+Composite
+-Represents a composite Component (Please note that composite components have children and they could be composite child’s or leafs )
+-Implements all Component methods, generally by delegating them to its children
+
+Advantage
+-We can work with complex tree structure more conveniently
+
+Disadvantage
+-It might be difficult to provide a common interface for classes whose functionality differs too much. 
+
+We need to choose composite design pattern when
+-Represent part-whole hierarchies of objects.
+-Clients to ignore the difference between compositions of objects and individual objects.

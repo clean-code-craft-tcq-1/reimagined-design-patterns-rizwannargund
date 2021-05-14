@@ -1,0 +1,32 @@
+Decorator(Wrapper) Pattern
+
+- Is a structural pattern
+- Using decorator we can solve the problem where we want to add additional responsibilities to an object dynamically.
+	Decorator helps in overcoming alternative of subclassing for extending functionality.
+	Eg. A car showroom decided to provide an discount offer on car but existing class only calculate price. Here again the class definition is hidden or
+	we cannot sub class it since it is sealed or we cannot inherit multiple classes in some languages. We cannot modify the exisiting class which will violet the OCP principle. 
+	That time decorator helps us to overcome this issue.
+	
+	Can take example of ice cream, when we order ice cream which is of plain ice cream for that if we want additional thing like falvour or falvour and nuts 
+	or falvour and nuts and bowl or falvour and nuts and cup and hence responsibilities keeps on increasing for base ice cream.
+	or falvour and nuts and bowl or falvour and nuts and cup and hence responsibilities keeps on increasing for base ice cream.
+
+
+Client : Clients use the Component interface to interact with objects
+Component : Defines the interface for objects that can have responsibilities added to them dynamically.
+ConcreteComponent : Defines an object to which additional responsibilities can be attached.
+Decorator : Maintains a reference to a Component object and defines an interface that conforms to Component's interface.
+ConcreteDecorator : Adds responsibilities to the component.
+
+Advantage
+- Can add or remove responsibilities from an object at runtime.
+- Can extend an object’s behavior without making a new subclass.
+- Can combine several behaviors by wrapping an object into multiple decorators.
+
+Disadvantage
+- It’s hard to remove a specific wrapper from the wrappers stack.
+- It’s hard to implement a decorator in such a way that its behavior doesn’t depend on the order in the decorators stack.
+
+We need to choose decorator design pattern when
+- We need to add responsibilities to individual objects dynamically and transparently,
+- Class definition may be hidden or otherwise unavailable for sub classing.

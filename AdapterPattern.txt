@@ -1,0 +1,32 @@
+Adapter Pattern
+
+- Is a structural pattern
+- Using adapter we can solve the problem where core classes incompatiable with format which is not supported.
+	Eg. An application getting the data in form of XML which core classes supports and uses a third party library to display the charts.
+		But problem here is third party uses JSON format as input to bind the charts and third party cannot be modified as per the core classes.
+		In this case adpater pattern is helpful.
+		
+		You can create an adapter. This is a special object that converts the interface of one object so that another object can understand it.
+		The best example for the adapter pattern is based around AC power adapter
+		The AC adapter knows how to deal with both sides, acting as a middleman.
+		
+		
+Consider client class conatins the business logic for XML data
+- Will create client interface so that adapter class collabrate with client code
+- The core class which provide XML here will be adaptee class
+- Create adapter class which inherits adaptee class and implements client interface
+- In the Adapter class we first need get the XML data from adaptee class and 
+then parse the XML to JSON with thrid party library 
+- Then call the service 3rd party library to get the charts by passing JSON data
+
+-Advantage
+	Single Responsibility Principle. You can separate the interface or data conversion code from the primary business logic of the program.
+	
+-Disadvantage
+	 The overall complexity of the code increases because you need to introduce a set of new interfaces and classes.
+
+We need to choose builder design pattern when 
+- When you want to use some existing class, but its interface isn’t compatible with the rest of your code.
+- When you want to reuse several existing subclasses that lack some common functionality that can’t be added to the superclass.
+
+

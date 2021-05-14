@@ -1,0 +1,40 @@
+Builder Pattern
+
+- Is a creational design pattern.
+- Using builder we can solve the problem where overload constructor called with several optional parameters or
+ too many number of sub classes covering all parameters by inheriting base class.
+	e.g A house building, there can be different types of house 
+		1. Common house having 4 walls, 2 windows and one door
+		2. A house with swimming pool
+		3. A house with garden
+		4. A house with garage
+		
+		Consider we have a constructor
+		class House(windows,doors,rooms,hasGarge,hasSwimPool,hasGarden,...)
+		
+		So tomorrow we want to add new variant to house then again we add new parameter and which ever parameter dont need for the house we pass null.
+		To overcome this we have builder pattern which lets the separation of the house creation in steps wise and avoid the steps which is not necassary for differ house.
+		In builder interface will have 
+		
+			buildWindows()
+			buildDoor()
+			buildRooms()
+			buildGarden()
+			...
+		
+	Building a common house(object) to a complex house having swimming pool,garage etc., with step-by-step process is called builder pattern.
+
+- Pattern lets you object construction into set of steps(BuildWalls,BuildDoors etc.,).To create an object, you execute a series of these steps on a builder object. 
+ Here we dont need to call all of the steps to construct. We can call only the necassary ones to build the product.
+ 
+-Advantage
+	Can construct objects step-by-step, construction steps can vary according to the product.
+	
+-Disadvantage
+	 The overall complexity of the code increases since the pattern requires creating multiple new classes
+	 
+We need to choose builder design pattern when 
+- We need to break up the construction of complex object(eg. setSeats,setEngine,setTripComputer etc.,)
+- We need to create a complex object and it should be independent of the parts that make up the object(eg seats must not depend on doors)
+- The construction process must allow multiple representations of the same class(eg normal car, sports car)
+
